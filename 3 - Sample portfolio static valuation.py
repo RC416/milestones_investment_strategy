@@ -8,9 +8,9 @@ Use sample values and one outcome scenario
 @author: Ray
 """
 
-from Milestone_class import Milestone 
-from Milestone_class import cumulative_probs
-from Milestone_class import portfolio_cfs
+from functions_and_classes import Milestone 
+from functions_and_classes import cumulative_probs
+from functions_and_classes import portfolio_cfs
 import pandas as pd
 import numpy as np
 import random
@@ -20,7 +20,7 @@ events = ['phase 1 init', 'phase 2 init', 'phase 3 init', 'approval']
 values = [3.5, 7.0, 14.0, 19.0]
 timing = [1, 3, 5, 8]
 stage_prob = [0.320, 0.632, 0.307, 0.496]
-discount_rate = 0.15
+discount_rate = 0.10
 
 #create a portfolio of 5 milestones
 # choose the number of milestones in 5 deals

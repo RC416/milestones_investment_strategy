@@ -8,7 +8,7 @@ this one has 10 milestones
 @author: Ray
 """
 
-from Milestone_class import Milestone, cumulative_probs, portfolio_cfs, generate_outcome
+from functions_and_classes import Milestone, cumulative_probs, portfolio_cfs, generate_outcome
 import pandas as pd
 import numpy as np
 import random
@@ -18,7 +18,9 @@ events = ['phase 1 init', 'phase 2 init', 'phase 3 init', 'approval']
 values = [3.5, 7.0, 14.0, 19.0]
 timing = [1, 3, 5, 8]
 stage_prob = [0.320, 0.632, 0.307, 0.496] 
-discount_rate = 0.15
+discount_rate = 0.10
+
+n_portfolios = 10000
 
 #create a portfolio of 5 milestones
 # choose the number of milestones in 5 deals
@@ -43,7 +45,7 @@ probability_sample = [cumulative_probs(stage_prob[-2:]),cumulative_probs(stage_p
                       cumulative_probs(stage_prob[-4:]),cumulative_probs(stage_prob[-4:])]
 
 # create a random outcome set. Inner list creates one set of 5 outcomes, repeat many times
-outcomes_sample = [[generate_outcome(n_milestones_sample[x], stage_prob) for x in range(0,10)] for x in range(0,10000)]
+outcomes_sample = [[generate_outcome(n_milestones_sample[x], stage_prob) for x in range(0,10)] for x in range(0,n_portfolios)]
 
 
 portfolio_results = pd.DataFrame({'Upfront':[], 'Payout':[], 'Multiple':[], 'IRR':[], 'Cash Flows':[]})

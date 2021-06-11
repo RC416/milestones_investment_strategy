@@ -7,9 +7,9 @@ has already been achieved.
 
 @author: Ray
 """
-from Milestone_class import Milestone 
+from functions_and_classes import Milestone 
 #created an object to store and do calculations
-from Milestone_class import cumulative_probs
+from functions_and_classes import cumulative_probs
 import pandas as pd
 
 # create and value a pre-clinical milestone deal
@@ -19,7 +19,7 @@ events = ['phase 3 init', 'approval']
 values = [14.0, 19.0]
 timing = [1, 3]
 stage_prob = [0.307, 0.496]
-discount_rate = 0.15
+discount_rate = 0.10
 
 PC_deal = Milestone(events, values, timing, cumulative_probs(stage_prob))
 
